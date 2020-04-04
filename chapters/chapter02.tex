@@ -17,10 +17,16 @@ als drittes feature hat die grundfläche mit dem wasser shader eine radiale grad
 grundsätzlich war das erstellen das hintergrundes eine herausforderung, da die filmaufnahmen zu unterschiedlichen zeitpunkten enstanden sind, und damit sich der himmel farblich und auch charakterlich (mal mehr mal weniger wolken) unterschieden hat. Somit wurde ein mittelweg mit sonnigem Hintergrund bei gleichzeitig möglichst vielen wolken entschieden
 viele wolken heißt auch, dass sich im meer viel struktur spiegelt, was das bild realistischer erscheinen lässt
 
+\includegraphics{gfx/prod/env/env.png}
+\includegraphics{gfx/prod/env/ocean_shader.png}
+
 \subsection{Segelboot}
 
 download von grabcad, import in blender im stl format
 texturen und shader mussten noch eingefügt werden
+
+\includegraphics{gfx/prod/boat/boat.png}
+
 
 \section{Erstellung der Drohne}
 
@@ -34,6 +40,9 @@ weitere cad daten wurden von cadgrab heruntergeladen
 es muss ja nichts modelliert werden, was schon vorhanden ist.
 dazu gehören der elektromotor, servomotoren, propeller.
 
+\includegraphics{gfx/prod/plane/meshroom1.png}
+\includegraphics{gfx/prod/plane/meshroom2.png}
+
 
 \subsection{Modellierung}
 
@@ -41,12 +50,16 @@ das importierte cad und photoscan wurde teilweise komplett neumodelliert (flüge
 Kleinteile wurden ebenfalls selbstmodelliert.
 der Rest waren CAD-Daten wie oben beschrieben
 
+\includegraphics{gfx/prod/plane/plane5.png}
 \subsection{shading + look}
 
 prozedurale voronoi textur als basis für das Styropor. 
 dies war wichtig, da eine vernünftige uv-layer nicht angelegt werden konnte, da die topologie an dem cad-import sich hierfür schlecht geeignet hat
 mit glossy shader und subsurface scattering konnte der nötige Realismus erreicht werden.
 die restlichen objekte waren ganz gewöhnlich geshadet
+
+\includegraphics{gfx/prod/plane/plane1.png}
+% TODO evtl render einfügen?
 
 was den look angeht, wurde ein möglichst realistischer angestrebt, damit sich die gerenderten szenen sich möglichst gut in den film integrieren und der zuschauer nicht von unterschiedlichen looks verwirrt ist
 
@@ -58,6 +71,9 @@ wurde der Steuerknüpel nach vorne geneigt, haben sich bspw. die hinteren beiden
 die klebebänder müssen sich entsprechend deformieren.
 daher hier weightpainting
 
+\includegraphics{gfx/prod/plane/plane4.png}
+\includegraphics{gfx/prod/plane/plane8.png}
+
 \section{Animation}
 
 animation nodes setup: Flugzeug bewegt sich der gegebenen kurve entlang und stellt neigung und die Klappenstellung automatisch ein
@@ -66,11 +82,15 @@ besonderheit hierbei war, dass ein child-of constraint in die kamera eingefügt 
 so bewegt sich die position der kamera mit dem flugzeug mit, aber es dreht sich nicht mit. zusärtlich zu diesem constraint wurden keyframes eingefügt, sodass die kamera sich praktisch relativ zum flugzeug bewegt.
 dies war eine sehr große erleichterung bei der erstellung der animation
 auch weil wenn sich die position des flugzeuges durch bspw. anpassen des pfades, die kamera immernoch beim flugzeug geblieben ist.
-manuelle keyframe animation für 
+manuelle keyframe animation für landung + kamera
+
+\includegraphics{gfx/prod/plane/animation_nodes.png}
 
 \section{Spezialeffekte}
 
 partikelsystem für landung
+
+\includegraphics{gfx/prod/plane/particles.png}
 
 \section{Rendering und Datenhandling}
 
@@ -83,3 +103,4 @@ einziger nachteil dieses workflows sind die sehr großen datenmengen. somit hatt
 in den insgesamt 5 szenen (intro, flug erster teil, flug zweiter teil, landung und outro) etwa 1550 Bilder.
 mit einer renderzeit von etwa 1,5 minuten pro bild, belief sich die renderzeit pro iteration auf knapp 40 Stunden.
 
+% Bilder von denoising?
