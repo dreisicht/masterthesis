@@ -1,8 +1,77 @@
 \chapter{Produktion}
+Nachdem der Erstellung des Konzeptes wird in diesem Kapitel die Produktion dargestellt. Unter Produktion wird in diesem Projekt die Erstellung von Modellen und der daraus resultierenden Renderings verstanden -- die Videoproduktion wird hingegen nicht als Teil des Projektes verstanden.
 
-\section{Erstellung der Umgebung}
+\section{Umgebung}
+
+Zunächst wird auf die Erstellung der Umgebung eingegangen. Hierunter wird die virtuelle Welt verstanden, in der sich die Drohne bewegt. Hierzu gehören das Meer, das Segelboot und der Himmel.
 
 \subsection{Natur}
+
+Als wichtigster Baustein der Umgebung wurde ein hoher Aufwand in die Erstellung des Meeres gesteckt. Hierbei war eine Herausforderung, dass durch die vergleichsweise große Flughöhe der Drohne weite Teile des Meeres gezeigt wurden, aber auch gleichzeitig nähere Aufnahmen im Intro oder auch bei der Landung gemacht wurden. Folglich musste das Material eine ausreichende Detailauflösung für Nahaufnahmen bei gleichzeitig nicht offensichtlicher Wiederholung haben. Ebenso sollten sich die Meereswellen bewegen.\\
+Um diese Anforderungen zu erfüllen, wurden Meerestexturen generiert, welche animiert sind. Der Ausschnitt einer einzelnen Textur ist unter \autoref{meer0} zu sehen. 
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer0.jpg}
+\caption{Meerestextur}
+\label{meer0}
+\end{figure}
+
+Wenn man nun diese Textur wiederholt zeigen würde, wären Artefakte leicht sichtbar, wie in \autoref{meer1} zu sehen ist.
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer1.jpg}
+\caption{Meerestextur}
+\label{meer1}
+\end{figure}
+
+Aus diesem Grund wurden vier unterschiedliche Texturen generiert, welche jeweils zweimal geladen wurden.
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer2.jpg}
+\caption{Meerestextur}
+\label{meer2}
+\end{figure}
+
+text 3
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer3.jpg}
+\caption{Meerestextur}
+\label{meer3}
+\end{figure}
+
+text 4
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer4.jpg}
+\caption{Meerestextur}
+\label{meer4}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer5.jpg}
+\caption{Meerestextur}
+\label{meer5}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer6.jpg}
+\caption{Meerestextur}
+\label{meer6}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer7.jpg}
+\caption{Meerestextur}
+\label{meer7}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/env/ocean_shader.jpg}
+\caption{Meerestextur}
+\label{ocean_shader}
+\end{figure}
+
 
 meer wurde mit animierten Texturen des ocean modifier gemacht
 es wurden keine geometrie, sondern nur normals berechnet --> performance
@@ -19,16 +88,6 @@ grundsätzlich war das erstellen das hintergrundes eine herausforderung, da die 
 viele wolken heißt auch, dass sich im meer viel struktur spiegelt, was das bild realistischer erscheinen lässt
 
 \includegraphics[width=\textwidth]{gfx/prod/env/env.jpg}
-\includegraphics[width=\textwidth]{gfx/prod/env/ocean_shader.jpg}
-
-\includegraphics[width=\textwidth /2]{gfx/prod/ocean/meer0.jpg}
-\includegraphics[width=\textwidth /2]{gfx/prod/ocean/meer1.jpg}
-\includegraphics[width=\textwidth /2]{gfx/prod/ocean/meer2.jpg}
-\includegraphics[width=\textwidth /2]{gfx/prod/ocean/meer3.jpg}
-\includegraphics[width=\textwidth /2]{gfx/prod/ocean/meer4.jpg}
-\includegraphics[width=\textwidth /2]{gfx/prod/ocean/meer5.jpg}
-\includegraphics[width=\textwidth /2]{gfx/prod/ocean/meer6.jpg}
-\includegraphics[width=\textwidth /2]{gfx/prod/ocean/meer7.jpg}
 
 
 \subsection{Segelboot}
@@ -39,7 +98,7 @@ texturen und shader mussten noch eingefügt werden
 \includegraphics[width=\textwidth]{gfx/prod/boat/boat.jpg}
 
 
-\section{Erstellung der Drohne}
+\section{Drohne}
 
 \subsection{Photoscan und CAD Daten}
 
@@ -97,6 +156,8 @@ daher hier weightpainting
 
 animation nodes setup: Flugzeug bewegt sich der gegebenen kurve entlang und stellt neigung und die Klappenstellung automatisch ein
 kamera wurde klassisch gekeyframet
+hinweis auf realismus: im flug war es nicht so wichtig, dass die kamera sich "realistisch" bewegt, da hier wenig referenzen vorhanden sind. Selbst wenn welche vorhanden sind, dann hat man flugzeuge im formationsflug im kopf, welche sich sehr konstant bewegen.
+Im gegensatz dazu wurde im shot mit der landung extra das Boot eingefügt, sowie eine schaukelnde bewegung, um den zuschauer das gefühl zu vermitteln, dass man sich jetzt wieder auf dem boot befindet.
 besonderheit hierbei war, dass ein child-of constraint in die kamera eingefügt wurde, welches von der position des flugzeuges abhängig ist.
 so bewegt sich die position der kamera mit dem flugzeug mit, aber es dreht sich nicht mit. zusärtlich zu diesem constraint wurden keyframes eingefügt, sodass die kamera sich praktisch relativ zum flugzeug bewegt.
 dies war eine sehr große erleichterung bei der erstellung der animation
