@@ -5,14 +5,14 @@ Nachdem der Erstellung des Konzeptes wird in diesem Kapitel die Produktion darge
 
 Zunächst wird auf die Erstellung der Umgebung eingegangen. Hierunter wird die virtuelle Welt verstanden, in der sich die Drohne bewegt. Hierzu gehören das Meer, das Segelboot und der Himmel.
 
-\subsection{Natur}
+\subsection{Meer}
 
 Als wichtigster Baustein der Umgebung wurde ein hoher Aufwand in die Erstellung des Meeres gesteckt. Hierbei war eine Herausforderung, dass durch die vergleichsweise große Flughöhe der Drohne weite Teile des Meeres gezeigt wurden, aber auch gleichzeitig nähere Aufnahmen im Intro oder auch bei der Landung gemacht wurden. Folglich musste das Material eine ausreichende Detailauflösung für Nahaufnahmen bei gleichzeitig nicht offensichtlicher Wiederholung haben. Ebenso sollten sich die Meereswellen bewegen.\\
 Um diese Anforderungen zu erfüllen, wurden Meerestexturen generiert, welche animiert sind. Der Ausschnitt einer einzelnen Textur ist unter \autoref{meer0} zu sehen. 
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer0.jpg}
-\caption{Meerestextur}
+\caption{einzelne Textur als Displacement Map angewendet}
 \label{meer0}
 \end{figure}
 
@@ -20,77 +20,79 @@ Wenn man nun diese Textur wiederholt zeigen würde, wären Artefakte leicht sich
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer1.jpg}
-\caption{Meerestextur}
+\caption{einzelne Textur gekachelt}
 \label{meer1}
 \end{figure}
 
-Aus diesem Grund wurden vier unterschiedliche Texturen generiert, welche jeweils zweimal geladen wurden.
+Aus diesem Grund wurden vier unterschiedliche Texturen generiert, welche jeweils zweimal geladen wurden. Diese insgesamt acht Texturen wurden unterschiedlich rotiert skaliert, verschoben, und anschließend übereinander gelegt, damit die nötige Varianz entsteht. Diese problemlos skalierbare Textur ist in \autoref{meer2} zu sehen.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer2.jpg}
-\caption{Meerestextur}
+\caption{unterschiedliche Texturen gekachelt}
 \label{meer2}
 \end{figure}
 
-text 3
+Mit einer zusätzlichen prozeduralen Textur wurde die Intensität der Wellen eingestellt und damit simuliert, dass aufgrund unterschiedlicher Windstärken an unterschiedlichen Orten unterschiedlich starke wellen vorhanden sind. Das Ergebnis der bisherigen Texturen ist in \autoref{meer4} zu sehen.
 
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{gfx/prod/ocean/meer3.jpg}
-\caption{Meerestextur}
-\label{meer3}
-\end{figure}
-
-text 4
+% \begin{figure}[H]
+% \includegraphics[width=\textwidth]{gfx/prod/ocean/meer3.jpg}
+% \caption{Meerestextur}
+% \label{meer3}
+% \end{figure}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer4.jpg}
-\caption{Meerestextur}
+\caption{Unterschiedliche Intensitäten der Texturen}
 \label{meer4}
 \end{figure}
 
+Als letzter Part der Wellen wurde noch eine Textur über die bisherigen gelegt. Die in \autoref{meer5} abgebildete Textur stellt das Kielwasser des Segelbootes dar. Die Position dieser Textur ist daher auch an die Position des Segelbootes gekoppelt.
+
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer5.jpg}
-\caption{Meerestextur}
+\caption{Kielwasser des Segelbootes als Normal Map}
 \label{meer5}
 \end{figure}
 
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{gfx/prod/ocean/meer6.jpg}
-\caption{Meerestextur}
-\label{meer6}
-\end{figure}
+Weiterhin wurde dem Meer eine leichte farbliche Varianz gegeben, wie in \autoref{meer7} zu sehen ist.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer7.jpg}
-\caption{Meerestextur}
+\caption{Farbvariationen des Meeres}
 \label{meer7}
 \end{figure}
 
+In einem weiteren Schritt wurde der Dunst mit einer unüblichen Technik dargestellt. Üblicherweise wird dieser dargestellt, indem mit steigender Entfernung eines Punktes dieser mit der Farbe des Hintergrundes gemischt wird. Da hier das Meer als einziges Objekt von der Kamera weit entfernt genug war, wurde dieser Effekt direkt im Shader abgebildet. Hierbei wird mit einem radialen Gradienten, welcher die Position der Kamera hat, zwischen dem Shader des Meeres und einem transparentem Shader gemischt. Dieser Gradient ist in \autoref{meer6} sichtbar.
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{gfx/prod/ocean/meer6.jpg}
+\caption{Gradiententextur für Dunstsimulation}
+\label{meer6}
+\end{figure}
+
+Der gesamte Aufbau des Shaders 
+
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/env/ocean_shader.jpg}
-\caption{Meerestextur}
+\caption{Übersicht über Shaderaufbau}
 \label{ocean_shader}
 \end{figure}
 
+\subsection{Himmel}
 
-meer wurde mit animierten Texturen des ocean modifier gemacht
-es wurden keine geometrie, sondern nur normals berechnet --> performance
-diese wurde gebaket, und exportiert, und dann in den shader als normal map reingeladen
-vier unterschiedliche texturen wurden reingeladen, zwei dawvon zweimal
-alle wurden dann leicht unterschiedliche skaliert und rotiert, sodass ein tiling vermieden wird
---> sehr große herausforderung bei einer so großen oberfläche tiling zu vermieden
-prozedurale textur da die textur animiert sein soll
-außerdem wurden die wake-wellen des Bootes mit einer texture hinzugefügt
-die textur-koordinaten dieser wellen, sind abhängig von einem Objekt, welches mit dem Boot mitgeführt wird
-somit bewegen sich die wellen mit dem boot mit
-als drittes feature hat die grundfläche mit dem wasser shader eine radiale gradient texture, sodass mit ausreichendem abstand von der kamera die Wasseroberfläche transparent wird, und somit sich dann zum Himmelüberblendet. Damit ist ein dunst effekt einfach zu faken.
-grundsätzlich war das erstellen das hintergrundes eine herausforderung, da die filmaufnahmen zu unterschiedlichen zeitpunkten enstanden sind, und damit sich der himmel farblich und auch charakterlich (mal mehr mal weniger wolken) unterschieden hat. Somit wurde ein mittelweg mit sonnigem Hintergrund bei gleichzeitig möglichst vielen wolken entschieden
-viele wolken heißt auch, dass sich im meer viel struktur spiegelt, was das bild realistischer erscheinen lässt
-
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/env/env.jpg}
+\caption{Unterschiedliche Schritte des Himmels}
+\label{env}
+\end{figure}
 
+Der Hintergrund, bzw. der Himmel war das zweite wichtige Standbein der Umgebung. Die Schwierigkeit war hierbei, dass die Filmaufnahmen zu unterschiedlichen Zeitpunkten erstellt wurden. Damit musste ein Kompromiss aus Bewölkung und Sonnenstand gemacht werden. Die Entscheidung fiel hierbei auf die Textur links in \autoref{env}. Diese Textur hat eine sehr hohe qualität und passt ebenfalls sehr gut zum Filmmaterial. Nachteil der Textur war, dass einige Bäume über dem Horizont noch sichtbar sind. Deswegen wurde im Bereich des Horizontes eine andere Textur, die grundsätzlich nicht so gut zum Filmmaterial passt, verwendet (siehe \autoref{env}, zweite Spalte).\\
+Durch die vergleichsweise hohe Flughöhe der Drohne, sieht man jedoch etwas tiefer als der Horizont in der Textur geht. Dies hatte zur Folge, dass der schwarze Bereich sichtbar war. Dies wurde umgangen, indem hier anstatt des schwarzen Bereiches eine vertikal skalierte Version gezeigt wurde (siehe dritte Spalte).\\
+Diese drei Texturen bilden abschließend den fertigen Himmel, wie in der vierten Spalte zu sehen ist. In der fünften und letzten Spalte ist als Vergleich das Meer zusätzlich eingefügt.
 
 \subsection{Segelboot}
+
+
 
 download von grabcad, import in blender im stl format
 texturen und shader mussten noch eingefügt werden
@@ -121,7 +123,7 @@ Kleinteile wurden ebenfalls selbstmodelliert.
 der Rest waren CAD-Daten wie oben beschrieben
 
 \includegraphics[width=\textwidth]{gfx/prod/plane/plane5.jpg}
-\subsection{shading + look}
+\subsection{Shading}
 
 prozedurale voronoi textur als basis für das Styropor. 
 dies war wichtig, da eine vernünftige uv-layer nicht angelegt werden konnte, da die topologie an dem cad-import sich hierfür schlecht geeignet hat
@@ -140,7 +142,7 @@ weißter text mit milchglassähnlichem rahmen damit zu restlichen film durchgän
 
 was den look angeht, wurde ein möglichst realistischer angestrebt, damit sich die gerenderten szenen sich möglichst gut in den film integrieren und der zuschauer nicht von unterschiedlichen looks verwirrt ist
 
-\subsection{Rigging und Animation}
+\subsection{Rigging}
 
 Die Gelenke der Servomotoren wurden mit einem inverse-kinematik rig versehen. Somit haben sich die Stangen und auch der Hebel an dem Servomotor mitbewegt.
 am ende waren die bewegungen der Servomotoren nur abhängig von einem einzigen bone, der wie ein steuerruder bei einem flugzeug funktioniert hat.
@@ -173,7 +175,7 @@ partikelsystem für landung
 
 \includegraphics[width=\textwidth]{gfx/prod/plane/particles.jpg}
 
-\section{Rendering und Datenhandling}
+\section{Rendering}
 
 rendering in der cycles engine
 da ein schönes visuelles ergebnis hier leichter zu erreichen ist wie in eevee
