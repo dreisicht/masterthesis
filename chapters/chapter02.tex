@@ -46,7 +46,7 @@ Mit einer zusätzlichen prozeduralen Textur wurde die Intensität der Wellen ein
 \label{meer4}
 \end{figure}
 
-Als letzter Part der Wellen wurde noch eine Textur über die bisherigen gelegt. Die in \autoref{meer5} abgebildete Textur stellt das Kielwasser des Segelbootes dar. Die Position dieser Textur ist daher auch an die Position des Segelbootes gekoppelt.
+Als letzter Part der Wellen wurde noch eine Textur über die bisherigen gelegt. Die in \autoref{meer5} abgebildete Textur stellt das Kielwasser des Segelbootes dar \cite{Wake}. Die Position dieser Textur ist daher auch an die Position des Segelbootes gekoppelt.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer5.jpg}
@@ -62,7 +62,7 @@ Weiterhin wurde dem Meer eine leichte farbliche Varianz gegeben, wie in \autoref
 \label{meer7}
 \end{figure}
 
-In einem weiteren Schritt wurde der Dunst mit einer unüblichen Technik dargestellt. Üblicherweise wird dieser dargestellt, indem mit steigender Entfernung eines Punktes dieser mit der Farbe des Hintergrundes gemischt wird. Da hier das Meer als einziges Objekt von der Kamera weit entfernt genug war, wurde dieser Effekt direkt im Shader abgebildet. Hierbei wird mit einem radialen Gradienten, welcher die Position der Kamera hat, zwischen dem Shader des Meeres und einem transparentem Shader gemischt. Dieser Gradient ist in \autoref{meer6} sichtbar.
+In einem weiteren Schritt wurde der Dunst mit einer unüblichen Technik dargestellt. Üblicherweise wird dieser dargestellt, indem mit steigender Entfernung eines Punktes dieser mit der Farbe des Hintergrundes gemischt wird \cite{mist}. Da hier das Meer als einziges Objekt von der Kamera weit entfernt genug war, wurde dieser Effekt direkt im Shader abgebildet. Hierbei wird mit einem radialen Gradienten, welcher die Position der Kamera hat, zwischen dem Shader des Meeres und einem transparentem Shader gemischt. Dieser Gradient ist in \autoref{meer6} sichtbar.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer6.jpg}
@@ -70,7 +70,7 @@ In einem weiteren Schritt wurde der Dunst mit einer unüblichen Technik dargeste
 \label{meer6}
 \end{figure}
 
-Der gesamte Aufbau des Shaders 
+Der gesamte Aufbau des Shaders in Blender.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/env/ocean_shader.jpg}
@@ -86,44 +86,65 @@ Der gesamte Aufbau des Shaders
 \label{env}
 \end{figure}
 
-Der Hintergrund, bzw. der Himmel war das zweite wichtige Standbein der Umgebung. Die Schwierigkeit war hierbei, dass die Filmaufnahmen zu unterschiedlichen Zeitpunkten erstellt wurden. Damit musste ein Kompromiss aus Bewölkung und Sonnenstand gemacht werden. Die Entscheidung fiel hierbei auf die Textur links in \autoref{env}. Diese Textur hat eine sehr hohe qualität und passt ebenfalls sehr gut zum Filmmaterial. Nachteil der Textur war, dass einige Bäume über dem Horizont noch sichtbar sind. Deswegen wurde im Bereich des Horizontes eine andere Textur, die grundsätzlich nicht so gut zum Filmmaterial passt, verwendet (siehe \autoref{env}, zweite Spalte).\\
+Der Hintergrund, bzw. der Himmel war das zweite wichtige Standbein der Umgebung. Die Schwierigkeit war hierbei, dass die Filmaufnahmen zu unterschiedlichen Zeitpunkten erstellt wurden. Damit musste ein Kompromiss aus Bewölkung und Sonnenstand gemacht werden. Die Entscheidung fiel hierbei auf die Textur links in \autoref{env} \cite{Sunflowers}. Diese Textur hat eine sehr hohe Qualität und passt ebenfalls sehr gut zum Filmmaterial. Nachteil der Textur war, dass einige Bäume über dem Horizont noch sichtbar sind. Deswegen wurde im Bereich des Horizontes eine andere Textur \cite{Sky}, die grundsätzlich nicht so gut zum Filmmaterial passt, verwendet (siehe \autoref{env}, zweite Spalte).\\
 Durch die vergleichsweise hohe Flughöhe der Drohne, sieht man jedoch etwas tiefer als der Horizont in der Textur geht. Dies hatte zur Folge, dass der schwarze Bereich sichtbar war. Dies wurde umgangen, indem hier anstatt des schwarzen Bereiches eine vertikal skalierte Version gezeigt wurde (siehe dritte Spalte).\\
 Diese drei Texturen bilden abschließend den fertigen Himmel, wie in der vierten Spalte zu sehen ist. In der fünften und letzten Spalte ist als Vergleich das Meer zusätzlich eingefügt.
 
 \subsection{Segelboot}
 
+% \begin{wrapfigure}{r}{0.5\textwidth}
+% \begin{center}
+% \includegraphics[width=0.2\textwidth]{gfx/prod/boat/boat.jpg}
+% \end{center}
+% \caption{Segelboot mit Materialien}
+% \label{segelboot_modell}
+% \end{wrapfigure}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{gfx/prod/boat/boat.jpg}
+\end{center}
+\caption{Segelboot mit Materialien}
+\label{segelboot_modell}
+\end{figure}
 
-download von grabcad, import in blender im stl format
-texturen und shader mussten noch eingefügt werden
-
-\includegraphics[width=\textwidth]{gfx/prod/boat/boat.jpg}
-
+Das heruntergeladene CAD-Modell des Segelbootes wurde in Blender importiert und mit passenden Materialien versehen \cite{Sailboat}. Auf das Segel wurde ein Bild eines Segelbootes projiziert, damit die Struktur und die Nähte sichtbar sind \cite{impression}. Anschließend wurden zwei Modelle von Menschen hinzugefügt \cite{people}. Das Ergebnis des Bootes ist in \autoref{segelboot_modell} abgebildet.
 
 \section{Drohne}
 
-\subsection{Photoscan und CAD Daten}
-
-ca 250 fotos mit iphone
-perspektive so, dass alles abgedeckt ist
-trotzdem haben seiten gefehlt
-(bild von scan)
-weitere cad daten wurden von cadgrab heruntergeladen
-es muss ja nichts modelliert werden, was schon vorhanden ist.
-dazu gehören der elektromotor, servomotoren, propeller.
-
-\includegraphics[width=\textwidth]{gfx/prod/plane/meshroom1.jpg}
-\includegraphics[width=\textwidth]{gfx/prod/plane/meshroom2.jpg}
-
-
 \subsection{Modellierung}
 
-das importierte cad und photoscan wurde teilweise komplett neumodelliert (flügel, Leitwerke, )
-Kleinteile wurden ebenfalls selbstmodelliert.
-der Rest waren CAD-Daten wie oben beschrieben
+Als Grundlage für das Modell der Drohne hat ein Fotoscan gedient. Hierzu wurden mit einem Smartphone etwa 250 Fotos der Drohne für zwei Scans angefertigt -- einmal von oben und einmal von unten. Anschließend wurden die Bilder in die Fotoscansoftware Meshroom geladen und zu einem texturierten 3D-Modell gewandelt. Dieser Vorgang ist in \autoref{meshroom1} und \autoref{meshroom2} dargestellt. Leider wurden von der Seite des Modells nicht ausreichend Bilder erstellt, sodass teilweise ein Spalt vorhanden war, wie in \autoref{drohne_modell} zu sehen ist.\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{gfx/prod/plane/meshroom1.jpg}
+\caption{Fotoscan in Meshroom, Drohne von oben}
+\label{meshroom1}
+\end{center}
+\end{figure}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{gfx/prod/plane/meshroom2.jpg}
+\caption{Fotoscan in Meshroom, Drohne von unten}
+\label{meshroom2}
+\end{center}
+\end{figure}
+
+Für den Rumpf wurde ein CAD-Modell bereitgestellt, der nur leicht nachbearbeitet werden musste. Flügel und Leitwerke wurden selbst modelliert.\\
+Die übrigen Kleinteile, wie Servomotoren \cite{Hobby}, Propeller \cite{propeller}, Elektromotr \cite{brushless} und Schalter \cite{Rocker} wurden ebenfalls als CAD-Daten importiert, und anschließend mit Materialien versehen.
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/prod/plane/plane5.jpg}
+\caption{Unterschiedliche Schritte der Modellierung}
+\label{drohne_modell}
+\end{center}
+\end{figure}
+
 \subsection{Shading}
+
+
 
 prozedurale voronoi textur als basis für das Styropor. 
 dies war wichtig, da eine vernünftige uv-layer nicht angelegt werden konnte, da die topologie an dem cad-import sich hierfür schlecht geeignet hat
@@ -138,7 +159,6 @@ weißter text mit milchglassähnlichem rahmen damit zu restlichen film durchgän
 
 
 \includegraphics[width=\textwidth]{gfx/prod/plane/shading.jpg}
-
 
 was den look angeht, wurde ein möglichst realistischer angestrebt, damit sich die gerenderten szenen sich möglichst gut in den film integrieren und der zuschauer nicht von unterschiedlichen looks verwirrt ist
 
