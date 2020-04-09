@@ -62,7 +62,8 @@ Weiterhin wurde dem Meer eine leichte farbliche Varianz gegeben, wie in \autoref
 \label{meer7}
 \end{figure}
 
-In einem weiteren Schritt wurde der Dunst mit einer unüblichen Technik dargestellt. Üblicherweise wird dieser dargestellt, indem mit steigender Entfernung eines Punktes dieser mit der Farbe des Hintergrundes gemischt wird \cite{mist}. Da hier das Meer als einziges Objekt von der Kamera weit entfernt genug war, wurde dieser Effekt direkt im Material abgebildet. Hierbei wird mit einem radialen Gradienten, welcher die Position der Kamera hat, zwischen dem Material des Meeres und einem transparentem Material gemischt. Dieser Gradient ist in \autoref{meer6} sichtbar.
+In einem weiteren Schritt wurde der Dunst mit einer unüblichen Technik dargestellt. Üblicherweise wird dieser dargestellt, indem mit steigender Entfernung eines Punktes dieser mit der Farbe des Hintergrundes gemischt wird \cite{mist}.\\
+Da hier das Meer als einziges Objekt von der Kamera weit entfernt genug war, wurde dieser Effekt direkt im Material abgebildet. Hierbei wird mit einem radialen Gradienten, welcher die Position der Kamera hat, zwischen dem Material des Meeres und einem transparentem Material gemischt. Dieser Gradient ist in \autoref{meer6} sichtbar.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer6.jpg}
@@ -166,9 +167,9 @@ Das Thema der später hinzugefügten Bauchbinden sollte auch im Intro aufgenomme
 
 \subsection{Rigging}
 
-Unter Rigging versteht man eine Technik, bei der komplexere Bewegungen definiert werden, mithilfe von Skeletten, welche aus Knochen bestehen. Üblicherweise geschieht dies bei Charactern, weshalb die Begriffe Skelett und Knochen geläufig sind. \cite{rigging}\\
+Unter Rigging versteht man eine Technik, bei der komplexere Bewegungen definiert werden, mithilfe von Skeletten, welche aus Knochen bestehen. Üblicherweise geschieht dies bei Charaktern, weshalb die Begriffe Skelett und Knochen geläufig sind. \cite{rigging}\\
 Geriggt wurden die Leitwerke der Drohne und alle Objekte, welche damit im Zusammenhang stehen. Das bedeutet die zwei Klappen an den beiden Leitwerken, sowie die Klappen an den Flügeln. Hierbei mussten die Bewegungen aller Objekte definiert werden, welche bewegen. In Reihenfolge des Effektes sind das die Servomotoren, der Hebel, die Verbindungsstange, die Befestigung am Leitwerk, das Leitwerk selber, sowie in Teilen das Klebeband.\\
-Die Bewegungen wurden mit einem Sekelett mit Inverser Kinematik versehen. Dies bedeutet, dass die Position des Hebels des Servomotors und die Position der Verbindungsstange errechnet werden, in Abhängigkeit der Position des Leitwerkes. Das Ziel, welches die Kinematik erreichen muss, ist mit türkiser Farbe in \autoref{rig} markiert. Die passende Deformation des Klebebandes wurde mit einem Weight-Painting erstellt. Hierbei wird definiert, welcher Teil des Objektes statisch ist, und welcher Teil sich mit dem Knochen mitbewegt.
+Die Bewegungen wurden mit einem Skelett mit Inverser Kinematik versehen. Dies bedeutet, dass die Position des Hebels des Servomotors und die Position der Verbindungsstange errechnet werden, in Abhängigkeit der Position des Leitwerkes. Das Ziel, welches die Kinematik erreichen muss, ist mit türkiser Farbe in \autoref{rig} markiert. Die passende Deformation des Klebebandes wurde mit einem ``Weight Painting'' erstellt. Hierbei wird definiert, welcher Teil des Objektes statisch ist, und welcher Teil sich mit dem Knochen mitbewegt \cite{weight_paint}.
 %todo Weightpainting, Bone, Armature, (IK)
 
 \begin{figure}[H]
@@ -192,7 +193,7 @@ Die Antenne, welche sich im Fahrtwind mitbewegt, wurde mit einem ``Bendy-Bone'' 
 
 \section{Animation}
 
-Die Bewegung des Flugzeuges wurde mit einem visuellen Programmiersystem in Blender erstellt (siehe \autoref{animation_nodes}). Das Prinzip dahinter ist, dass eine Kurve erstellt wird, welcher das Flugzeug folgt. Mit der Kurve selber ist die Ausrichtung und die Position der Drohne berechenbar. Weiterhin wird der Kurvenradius berechnet, wovon der Rollgrad des Flugzeuges abhängig ist. Abschließend wird in Abhängigkeit der Roo1tion des Flugzeuges die Stellung der Klappen berechnet.
+Die Bewegung des Flugzeuges wurde mit einem visuellen Programmiersystem in Blender erstellt (siehe \autoref{animation_nodes}). Das Prinzip dahinter ist, dass eine Kurve erstellt wird, welcher das Flugzeug folgt. Mit der Kurve selber ist die Ausrichtung und die Position der Drohne berechenbar. Weiterhin wird der Kurvenradius berechnet, wovon der Rollgrad des Flugzeuges abhängig ist. Abschließend wird in Abhängigkeit der Rotation des Flugzeuges die Stellung der Klappen berechnet.
 
 \begin{figure}[H]
 \begin{center}
@@ -230,7 +231,8 @@ Da jedoch kein Videomaterial von der Landung vorhanden war, musste diese virtuel
 
 \section{Rendering}
 
-Das nun fertiggestellte und animierte Modell wurde nun gerendert. Hierunter versteht man dass in Abhängigkeit der Lichtquellen -- in diesem Fall des Himmels -- Licht und Schattenwurf des Modells berechnet wird. Um einen möglichst realistischen Look zu erreichen, wurde entschieden mit dem Path-Tracer ``Cycles'' zu arbeiten. Dieser verwendet einen sehr rechenaufwändigen stochastischen Algorithmus. Dies bedeutet, dass mit vielen Proben getestet wird, wie sich Photonen in der Szene verhalten würden. Mit steigender Anzahl der Proben reduziert sich die Streuung, weswegen das Bildrauschen reduziert wird. Für dieses Projekt stand nur ein Standrechner mit einer handelsüblichen Grafikkarte zur Verfügung, weshalb nur 512 Proben pro Pixel berechnet wurden. Das sichtbare Rauschen wurde dann mit einem Filter entfernt. In \autoref{denoising} ist der Unterschied zwischen Rohmaterial (linke Bildhälfte) und gefiltertem Bild (rechte Bildhälfte) zu sehen. Insgesamt belief sich damit die Rechenzeit bei 1550 Bildern und bei 100 Sekunden pro Bild auf etwa 48 Stunden.
+Das nun fertiggestellte und animierte Modell wurde nun gerendert. Hierunter versteht man dass in Abhängigkeit der Lichtquellen -- in diesem Fall des Himmels -- Licht und Schattenwurf des Modells berechnet wird. Um einen möglichst realistischen Look zu erreichen, wurde entschieden mit dem Path-Tracer ``Cycles'' zu arbeiten. Dieser verwendet einen sehr rechenaufwändigen stochastischen Algorithmus. Dies bedeutet, dass mit vielen Proben getestet wird, wie sich Photonen in der Szene verhalten würden. Mit steigender Anzahl der Proben reduziert sich die Streuung, weswegen das Bildrauschen reduziert wird. \cite{cycles}\\
+Für dieses Projekt stand nur ein Standrechner mit einer handelsüblichen Grafikkarte zur Verfügung, weshalb nur 512 Proben pro Pixel berechnet wurden. Das sichtbare Rauschen wurde dann mit einem Filter entfernt. In \autoref{denoising} ist der Unterschied zwischen Rohmaterial (linke Bildhälfte) und gefiltertem Bild (rechte Bildhälfte) zu sehen. Insgesamt belief sich damit die Rechenzeit bei 1550 Bildern und bei 100 Sekunden pro Bild auf etwa 48 Stunden.
 
 \begin{figure}[H]
 \begin{center}
