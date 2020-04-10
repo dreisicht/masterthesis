@@ -1,40 +1,98 @@
 \chapter{Postproduktion}
 
-In diesem Kapitel wird der Teil der Postproduktion beschrieben. Im Zusammenhang mit diesem Projekt ist dies das Zusammenführen von Filmmaterial und gerendertem Material im Schnitt, sowie das Nachbearbeiten dieser.
+In diesem Kapitel wird der Teil der Postproduktion beschrieben. Im Zusammenhang mit diesem Projekt ist dies das Zusammenführen von Filmmaterial und gerendertem Material im Schnitt, sowie das Nachbearbeiten dieser. Die Postproduktion ist in der Videoschnitt- und Farbkorrektursoftware DaVinci Resolve 16 geschehen.
 
 \section{Schnitt}
 
+Der erste Schnitt wurde vor der Produktion im Zusammenhang mit dem Animatic (siehe \autoref{sec:konzept:outline}) erstellt. Aufbauend hierauf wurde auch der spätere Schnitt erstellt, dessen Übersicht in \autoref{resolve2} dargestellt ist.
 
-es stand nur schon geschnittenes footage zur verfügung
-hinweis auf fernsehbeitrag des wdr (?)
-daher teilweise sehr schnelle schnitte, und wenig zeit zum lesen der textinformationen
-
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve2.jpg}
+\caption{}
+\label{resolve2}
+\end{center}
+\end{figure}
 
 \section{Bauchbinden}
+\label{sec:bauchbinden}
 
-texterstellung in blender mit animation nodes
+Die Texte für die Bauchbinden wurden in Blender erstellt. Der Grund ist, dass das gleichzeitige verschwinden von zwei Texten über unabhängige Masken konnte hier einfacher realisiert werden. Eine schräge Darstellung der Masken ist in \autoref{out2} abgebildet. Hierfür wurde eine Vorlage programmiert, welche für jeden neuen Text wiederholt wurde (siehe \autoref{out}).\\
+Zwar wird hier wieder in Blender eine Bildsequenz erstellt, welche in das Schnittprogramm geladen wird -- trotzdem wird dieser Teil zur Nachbearbeitung des eigentlichen Filmmaterials gezählt.
 
-erstellung der blur kästen in resolve
-
-\includegraphics[width=\textwidth]{gfx/post/resolve3.jpg}
-
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/call-out.jpg}
+\caption{Programmierte Vorlagen für die Bachbinden}
+\label{out}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/call-out2.jpg}
+\caption{Schräge Ansicht der Masken für die Bachbinden}
+\label{out2}
+\end{center}
+\end{figure}
 
+Damit der Text der Bauchbinden besser lesbar ist, wurden diese mit einem Rechteck hinterlegt, welches die Optik von satiniertem Glas hat. Dies wurde mit einem Unschärfe-Filter mit einer rechteckigen Maske realisiert. Dieser Filter musste auf alle Ebenen angewendet werden, sodass separat gerenderte Filmteile ebenfalls vom Filter betroffen werden.
 
-\section{Einfügen zusätzlicher Elemente}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{gfx/post/resolve3.jpg}
+\caption{}
+\label{resolve3}
+\end{center}
+\end{figure}
+
+\section{Tracking}
 
 iPad und Rettungsfloß wurden eingefügt mit tracking
 ipad wurde auch stabilisiert
 
 bei radiowellen war z.b. wichtig, dass der farbraum filmic erst angewendet wird, nachdem die wellen auf das flugzeug gelegt wurden. ansonsten ausbrennen oder nicht ausnutzen des farbraumes
 
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/prod/boat/liferaft1.jpg}
+\caption{}
+\label{liferaft1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve7.jpg}
+\caption{}
+\label{resolve7}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve8.jpg}
+\caption{}
+\label{resolve8}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve9.jpg}
+\caption{}
+\label{resolve9}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve10.jpg}
+\caption{}
+\label{resolve10}
+\end{center}
+\end{figure}
 
 
 \section{Colorgrading}
@@ -47,7 +105,14 @@ davor aber noch anwenden von ocio color space wichtig, da open exr immer linear 
 --> hinweis auf resolve3.jpg
 
 
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve7.jpg}
+\caption{}
+\label{resolve7}
+\end{center}
+\end{figure}
 
 \section{Audio}
 
@@ -61,5 +126,19 @@ motor sample wurde kopiert und denn mehrfach nacheinander abgespielt. außerdem 
 Dass der Motorsound und die Musik dieselbe tonhöhe haben, war ein glücklicher zufall
 WIndgeräusche
 
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve1.jpg}
+\caption{}
+\label{resolve1}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
 \includegraphics[width=\textwidth]{gfx/post/sample.jpg}
+\caption{}
+\label{sample}
+\end{center}
+\end{figure}

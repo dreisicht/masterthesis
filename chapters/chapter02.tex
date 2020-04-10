@@ -1,5 +1,5 @@
 \chapter{Produktion}
-Nachdem der Erstellung des Konzeptes wird in diesem Kapitel die Produktion dargestellt. Unter Produktion wird in diesem Projekt die Erstellung von Modellen und der daraus resultierenden Renderings verstanden -- die Videoproduktion wird hingegen nicht als Teil des Projektes verstanden.
+Nachdem der Erstellung des Konzeptes wird in diesem Kapitel die Produktion dargestellt. Unter Produktion wird in diesem Projekt die Erstellung von Modellen und der daraus resultierenden Renderings verstanden -- die Videoproduktion wird hingegen nicht als Teil des Projektes verstanden. Die gesamte Produktion ist in der 3D-Grafiksuite Blender 2.82 und 2.83 entstanden.
 
 \section{Umgebung}
 
@@ -62,7 +62,7 @@ Weiterhin wurde dem Meer eine leichte farbliche Varianz gegeben, wie in \autoref
 \label{meer7}
 \end{figure}
 
-In einem weiteren Schritt wurde der Dunst mit einer unüblichen Technik dargestellt. Üblicherweise wird dieser dargestellt, indem mit steigender Entfernung eines Punktes dieser mit der Farbe des Hintergrundes gemischt wird \cite{mist}.\\
+In einem weiteren Schritt wurde der Dunst mit einer unüblichen Technik dargestellt. Üblicherweise wird dieser dargestellt, indem mit steigender Entfernung eines Punktes dieser mit der Farbe des Hintergrundes gemischt wird \cite{mist}. Der größere Kreis ist hier Objekt, das das Meer darstellt.\\
 Da hier das Meer als einziges Objekt von der Kamera weit entfernt genug war, wurde dieser Effekt direkt im Material abgebildet. Hierbei wird mit einem radialen Gradienten, welcher die Position der Kamera hat, zwischen dem Material des Meeres und einem transparentem Material gemischt. Dieser Gradient ist in \autoref{meer6} sichtbar.
 
 \begin{figure}[H]
@@ -155,7 +155,7 @@ Das aus dem CAD importierte Modell besitzt eine ungleichmäßige Topologie, wesh
 \end{center}
 \end{figure}
 
-Das Thema der später hinzugefügten Bauchbinden sollte auch im Intro aufgenommen werden. Deswegen wurde entschieden im Intro den Filmtitel (in \autoref{intro_text} zu sehen), optisch an die Bachbinden anzugleichen. Das heißt, dass im Dreidimensionalen ein Rechteck mit einem milchglassähnlichem Material und einem Titel und Untertitel erstellt wurde.
+Das Thema der später hinzugefügten Bauchbinden sollte auch im Intro aufgenommen werden. Deswegen wurde entschieden im Intro den Filmtitel (in \autoref{intro_text} zu sehen), optisch an die Bachbinden anzugleichen (siehe \autoref{sec:bauchbinden}). Das heißt, dass im Dreidimensionalen ein Rechteck mit einem satiniertem Glas-Material und einem Titel sowie Untertitel erstellt wurde.
 
 \begin{figure}[H]
 \begin{center}
@@ -180,7 +180,7 @@ Die Bewegungen wurden mit einem Skelett mit Inverser Kinematik versehen. Dies be
 \end{center}
 \end{figure}
 
-Um den Aufwand bei der Animation zu reduzieren, wurde ein Knochen in Nähe der Antenne eingefügt, welcher ähnlich einem Sidestick im Flugzeug funktioniert. Somit können alle Klappen mit diesem Objekt angesteuert werden. Die Steuerung stimmt ebenfalls mit dem Prinzip des Sidesticks zusammen -- so muss bspw. das Objekt in Richtung der Flugrichtung geneigt werden, damit das Flugzeug sich nach unten neigt. Um dies zu erreichen dreht die Rotation des Sidesticks in Flugrichtung die Klappen an den Tragflächen. Die Rotation des Sidesticks um die beiden anderen Achsen wird an die Leitwerke gesendet. Hierbei werden die unterschiedlichen Bewegungsrichtungen aufeinander addiert. \\
+Um den Aufwand bei der Animation zu reduzieren, wurde ein Knochen in Nähe der Antenne eingefügt, welcher ähnlich einem Steuerknüppel im Flugzeug funktioniert. Somit können alle Klappen mit diesem Objekt angesteuert werden. Die Steuerung stimmt ebenfalls mit dem Prinzip des Steuerknüppels zusammen -- so muss bspw. das Objekt in Richtung der Flugrichtung geneigt werden, damit das Flugzeug sich nach unten neigt. Um dies zu erreichen dreht die Rotation des Steuerknüppels in Flugrichtung die Klappen an den Tragflächen. Die Rotation des Steuerknüppels um die beiden anderen Achsen wird an die Leitwerke gesendet. Hierbei werden die unterschiedlichen Bewegungsrichtungen aufeinander addiert. \\
 Die Antenne, welche sich im Fahrtwind mitbewegt, wurde mit einem ``Bendy-Bone'' erreicht. Hierunter versteht man einen Knochen, welcher sich selber mit einem Spline-Algorithmus deformieren kann. Daher musste hier kein aufwändiges Weight-Painting erstellt werden.
 
 \begin{figure}[H]
