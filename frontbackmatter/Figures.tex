@@ -5,12 +5,9 @@
 \renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
 \refstepcounter{dummy}
-\pdfbookmark[section]{\listfigurename}{toc}
+\pdfbookmark[0]{\listfigurename}{toc}
+% \newcommand*{\textsomels}[1]{\textls[80]{#1}}
+% \addcontentsline{toc}{section}{\textsomels{\textsc{abbildungsverzeichnis}}}%
+\renewcommand\bibname{quellen}
 \listoffigures
-% \spacedlowsmallcaps{#1}
-% \addtocontents{toc}{\protect\vspace{\beforebibskip}}%
-% \parindent 
-% \addcontentsline{toc}{Chapter}{Anhang}%
-% \tocentry{asdf}
-
 \cleardoublepage
