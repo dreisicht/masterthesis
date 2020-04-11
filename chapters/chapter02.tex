@@ -24,7 +24,7 @@ Wenn man nun diese Textur oft nebeneinander kopiert, ist die Wiederholung offens
 \label{meer1}
 \end{figure}
 
-Aus diesem Grund wurden vier unterschiedliche Texturen generiert, welche jeweils zweimal geladen wurden. Diese insgesamt acht Texturen wurden unterschiedlich rotiert, skaliert, verschoben, und anschließend übereinander gelegt, damit die nötige Varianz entsteht. Diese problemlos skalierbare Textur ist in \autoref{meer2} zu sehen.
+Aus diesem Grund wurden vier unterschiedliche Texturen generiert, welche jeweils zweimal geladen wurden. Diese insgesamt acht Texturen wurden unterschiedlich rotiert, skaliert, verschoben, und anschließend übereinandergelegt, damit die nötige Varianz entsteht. Diese problemlos skalierbare Textur ist in \autoref{meer2} zu sehen.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer2.jpg}
@@ -63,7 +63,7 @@ Weiterhin wurde dem Meer eine leichte farbliche Varianz gegeben, wie in \autoref
 \end{figure}
 
 In einem weiteren Schritt wurde der Dunst mit einer besonderen Technik umgesetzt. Üblicherweise wird dieser dargestellt, indem mit steigender Entfernung eines Punktes dieser mit der Farbe des Hintergrundes gemischt wird \footfullcite{mist}. Der größere Kreis ist hier Objekt, das das Meer darstellt.\\
-Da hier das Meer als einziges Objekt von der Kamera weit genug entfernt war, wurde dieser Effekt direkt im Material abgebildet. Hierbei wird mit einem radialen Gradienten, welcher die Position der Kamera hat, zwischen dem Material des Meeres und einem transparentem Material gemischt. Dieser Gradient ist in \autoref{meer6} sichtbar.
+Da hier das Meer als einziges Objekt von der Kamera weit genug entfernt war, wurde dieser Effekt direkt im Material abgebildet. Hierbei wird mit einem radialen Gradienten, welcher die Position der Kamera hat, zwischen dem Material des Meeres und einem transparenten Material gemischt. Dieser Gradient ist in \autoref{meer6} sichtbar.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{gfx/prod/ocean/meer6.jpg}
@@ -160,7 +160,7 @@ Die übrigen Kleinteile, wie Servomotoren \footfullcite{Hobby}, Propeller \footf
 
 \subsection{Shading}
 
-Das aus dem CAD importierte Modell besitzt eine ungleichmäßige Topologie, weshalb ein Abwickeln nur mit viel Aufwand realisiert hätte werden können. Deswegen wurde eine prozedurale Textur für das Styropor verwendet. Diese Textur ist volumetrisch, und benötigt daher kein zweidimensional abgewickeltes Modell. Mit einem glänzenden Material und Volumenstreuung konnte der nötige Realismus erreicht werden. Unter Volumenstreuung versteht man, dass Lichtstrahlen nicht nur von der Oberfläche, sondern auch innerhalb des Objektes reflektiert werden \footfullcite{vanGumster:2015:BD:2821218}. Das fertige Material ist in \autoref{shading} zu sehen. Das durchscheinen des Lichtes zwischen den einzelnen simulierten Styroporkugeln ist hier besonders gut sichtbar.
+Das aus dem CAD importierte Modell besitzt eine ungleichmäßige Topologie, weshalb ein Abwickeln nur mit viel Aufwand realisiert hätte werden können. Deswegen wurde eine prozedurale Textur für das Styropor verwendet. Diese Textur ist volumetrisch, und benötigt daher kein zweidimensional abgewickeltes Modell. Mit einem glänzenden Material und Volumenstreuung konnte der nötige Realismus erreicht werden. Unter Volumenstreuung versteht man, dass Lichtstrahlen nicht nur von der Oberfläche, sondern auch innerhalb des Objektes reflektiert werden \footfullcite{vanGumster:2015:BD:2821218}. Das fertige Material ist in \autoref{shading} zu sehen. Das Durchscheinen des Lichtes zwischen den einzelnen simulierten Styroporkugeln ist hier besonders gut sichtbar.
 
 \begin{figure}[H]
 \begin{center}
@@ -184,7 +184,7 @@ Das Thema der später hinzugefügten Bauchbinden sollte auch im Intro aufgenomme
 
 Unter Rigging versteht man eine Technik, bei der komplexere Bewegungen definiert werden, mithilfe von Skeletten, welche aus Knochen bestehen. Üblicherweise geschieht dies bei Charaktern, weshalb die Begriffe Skelett und Knochen geläufig sind. \footfullcite{rigging}\\
 Geriggt wurden die Leitwerke der Drohne und alle Objekte, welche damit im Zusammenhang stehen. 
-Hierzu gehören die zwei Klappen an den beiden Leitwerken, sowie die Klappen an den Flügeln. Hierbei mussten die Bewegungen aller Objekte definiert werden, welche mitbewegt werden. In Reihenfolge des Effektes sind das die Servomotoren, der Hebel dieser, die Verbindungsstange, die Befestigung am Leitwerk, das Leitwerk selber, sowie in Teilen das Klebeband.\\
+Hierzu gehören die zwei Klappen an den beiden Leitwerken, sowie die Klappen an den Flügeln. Hierbei mussten die Bewegungen aller Objekte definiert werden, welche mitbewegt werden. In Reihenfolge des Effektes sind das die Servomotoren, der Hebel dieser, die Verbindungsstange, die Befestigung am Leitwerk, das Leitwerk selbst, sowie in Teilen das Klebeband.\\
 Die Bewegungen wurden mit einem Skelett mit Inverser Kinematik versehen. Dies bedeutet, dass die Position des Hebels des Servomotors und die Position der Verbindungsstange errechnet werden, in Abhängigkeit der Position des Leitwerkes. Das Ziel, welches die Kinematik erreichen muss, ist mit roter Farbe in \autoref{rig} markiert. Die passende Deformation des Klebebandes wurde mit einem ``Weight Painting'' erstellt. Hierbei wird definiert, welcher Teil des Objektes statisch ist, und welcher Teil sich mit dem Knochen mitbewegt \footfullcite{weight_paint}.
 %todo Weightpainting, Bone, Armature, (IK)
 
@@ -196,8 +196,8 @@ Die Bewegungen wurden mit einem Skelett mit Inverser Kinematik versehen. Dies be
 \end{center}
 \end{figure}
 
-Um den Aufwand bei der Animation zu reduzieren, wurde ein Knochen in Nähe der Antenne eingefügt, welcher ähnlich einem Steuerknüppel im Flugzeug funktioniert. Somit können alle Klappen mit diesem Objekt angesteuert werden. Die Steuerung stimmt ebenfalls mit dem Prinzip des Steuerknüppels zusammen -- so muss bspw. der Knüppel in Richtung der Flugrichtung geneigt werden, damit das Flugzeug sich nach unten neigt. Dadurch werden dir Klappen an den Leitwerken nach unten geneigt. Weil die Klappen an den Leitwerken sowohl für den Anstellwinkel, als auch für den Gierwinkel des Flugzeuges verantwortlich sind, werden hier die beiden Rotationen des Knüppels aufaddiert.\\
-Die Antenne, welche sich durch den Fahrtwind bewegt, wurde mit einem ``Bendy-Bone'' erreicht. Hierunter versteht man einen Knochen, welcher sich selber mit einem Spline-Algorithmus deformieren kann. Daher musste hier kein aufwändiges Weight-Painting erstellt werden. \footfullcite{vanGumster:2015:BD:2821218}
+Um den Aufwand bei der Animation zu reduzieren, wurde ein Knochen in Nähe der Antenne eingefügt, welcher ähnlich einem Steuerknüppel im Flugzeug funktioniert. Somit können alle Klappen mit diesem Objekt angesteuert werden. Die Steuerung stimmt ebenfalls mit dem Prinzip des Steuerknüppels zusammen -- so muss bspw. der Knüppel in Richtung der Flugrichtung geneigt werden, damit das Flugzeug sich nach unten neigt. Dadurch werden die Klappen an den Leitwerken nach unten geneigt. Weil die Klappen an den Leitwerken sowohl für den Anstellwinkel als auch für den Gierwinkel des Flugzeuges verantwortlich sind, werden hier die beiden Rotationen des Knüppels aufaddiert.\\
+Die Antenne, welche sich durch den Fahrtwind bewegt, wurde mit einem ``Bendy-Bone'' erreicht. Hierunter versteht man einen Knochen, der sich selbst mit einem Spline-Algorithmus deformieren kann. Daher musste hier kein aufwändiges Weight-Painting erstellt werden. \footfullcite{vanGumster:2015:BD:2821218}
 
 \begin{figure}[H]
 \begin{center}
@@ -219,12 +219,12 @@ Die Bewegung des Flugzeuges wurde mit dem visuellen Programmiersystem Animation 
 \end{center}
 \end{figure}
 
-Der Kurvenradius wurde mithilfe von zwei weiteren Objekten errechnet, indem deren Rotation vor und hinter dem Flugzeug abgefragt wurde (siehe \autoref{an_flight}). Dies kann man jedoch auch als zeitlichen Versatz sehen, sodass dies einem Zeitversatz $ +\Delta $ bzw. $ -\Delta $ entspricht. Dadurch können numerische Ableitungen errechnet werden.
-Als Kurve wurde keine Spline sondern eine NURBS gewählt, da diese so eingestellt werden kann, dass sie in der ersten Ableitung stetig ist. Einzige Ausnahme in der das Flugzeug nicht mit diesem System animiert wurde, ist die Landung. Hier war es einfacher das abrupte abbremsen und das nachschaukeln der Drohne im Wasser, händisch nachzustellen.
-%todo Quelle
+Der Kurvenradius wurde mithilfe von zwei weiteren Objekten errechnet, indem deren Rotation vor und hinter dem Flugzeug abgefragt wurde (siehe \autoref{an_flight}). Dies kann man jedoch auch als zeitlichen Versatz sehen, sodass dies einem Zeitversatz $+\Delta$ bzw. $-\Delta$ entspricht. Dadurch können numerische Ableitungen errechnet werden.
+Als Kurve wurde keine Spline sondern eine NURBS gewählt, da diese so eingestellt werden kann, dass sie in der ersten Ableitung stetig ist \footfullcite{spline}.\\
+Einzige , in der das Flugzeug nicht mit diesem System animiert wurde, ist die Landung. Hier war es einfacher das abrupte Abbremsen und das nachschaukeln der Drohne im Wasser, händisch nachzustellen.\\
 Der Kamera wurde mit einem Child-Of-Constraint die Eigenschaft gegeben, dass die Position von der des Flugzeuges abhängig ist \footfullcite{vanGumster:2015:BD:2821218}. Zusätzlich wurde der Kamera eine Bewegung über Keyframes gegeben, damit sie sich um die Drohne herumbewegen kann. Somit war ein einfacher Workflow für die Kameraanimation vorhanden und die Kameraanimation musste nicht nachbearbeitet werden, wenn der Flugpfad geändert wurde.\\
 
-Der in \autoref{sec:konzept:outline} angesprochene Realismus bezieht sich grundsätzlich auch auf Animationen. Im Flug wurden manche Eigenschaften einer realistische Bewegung als nicht wichtig eingestuft, weil in Film und Fernsehen nur große Flugzeuge gezeigt werden, welche sich während dem Flug sehr ruhig bewegen. Daher wurde hier auf starke Bewegungen aufgrund von bspw. Turbulenzen verzichtet. Bei der Landung hingegen wurde das Schaukeln des Bootes und der Kamera wieder aufgegriffen, um ein möglichst gutes Eingliedern in den restlichen Film zu ermöglichen.
+Der in \autoref{sec:konzept:outline} angesprochene Realismus bezieht sich grundsätzlich auch auf Animationen. Im Flug wurden manche Eigenschaften einer realistischen Bewegung als nicht wichtig eingestuft, weil in Film und Fernsehen nur große Flugzeuge gezeigt werden, welche sich während dem Flug sehr ruhig bewegen. Daher wurde hier auf starke Bewegungen aufgrund von bspw. Turbulenzen verzichtet. Bei der Landung hingegen wurde das Schaukeln des Bootes und der Kamera wieder aufgegriffen, um ein möglichst gutes Eingliedern in den restlichen Film zu ermöglichen.
 
 \begin{figure}[H]
 \begin{center}
@@ -249,7 +249,7 @@ Da jedoch kein Videomaterial von der Landung vorhanden war, musste diese virtuel
 \section{Rendering}
 \label{sec:rendering}
 
-Das nun fertiggestellte und animierte Modell wurde danach gerendert. Hierunter versteht man dass in Abhängigkeit der Lichtquellen -- in diesem Fall des Himmels -- Licht und Schattenwurf des Modells berechnet wird. Um einen möglichst realistischen Look zu erreichen, wurde entschieden mit dem Path-Tracer ``Cycles'' zu arbeiten. Dieser verwendet einen sehr rechenaufwändigen stochastischen Algorithmus. Dies bedeutet, dass mit vielen Proben getestet wird, wie sich Photonen in der Szene verhalten würden. Mit steigender Anzahl der Proben reduziert sich die statistische Streuung, weswegen das Bildrauschen reduziert wird. \footfullcite{cycles}\\
+Das nun fertiggestellte und animierte Modell wurde danach gerendert. Hierunter versteht man, dass in Abhängigkeit der Lichtquellen -- in diesem Fall des Himmels -- Licht und Schattenwurf des Modells berechnet wird. Um einen möglichst realistischen Look zu erreichen, wurde entschieden mit dem Path-Tracer ``Cycles'' zu arbeiten. Dieser verwendet einen sehr rechenaufwändigen stochastischen Algorithmus. Dies bedeutet, dass mit vielen Proben getestet wird, wie sich Photonen in der Szene verhalten würden. Mit steigender Anzahl der Proben reduziert sich die statistische Streuung, weswegen das Bildrauschen reduziert wird. \footfullcite{cycles}\\
 Für dieses Projekt stand nur ein Standrechner mit einer handelsüblichen Grafikkarte zur Verfügung, weshalb nur 512 Proben pro Pixel berechnet wurden. Das noch sichtbare Bildrauschen wurde dann mit einem Filter entfernt. In \autoref{denoising} ist der Unterschied zwischen Rohmaterial (linke Bildhälfte) und gefiltertem Bild (rechte Bildhälfte) zu sehen. Insgesamt belief sich damit die Rechenzeit bei 1550 Bildern und bei 100 Sekunden pro Bild auf etwa 48 Stunden.
 
 \begin{figure}[H]

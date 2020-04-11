@@ -17,7 +17,7 @@ Der erste Schnitt wurde vor der Produktion im Zusammenhang mit dem Animatic (sie
 \section{Bauchbinden}
 \label{sec:bauchbinden}
 
-Die Texte für die Bauchbinden wurden in Blender erstellt. Der Grund ist, dass das gleichzeitige verschwinden von zwei Texten über unabhängige Masken, hier einfacher realisiert werden konnte. Eine schräge Darstellung der Masken ist in \autoref{out2} abgebildet. Hierfür wurde eine Vorlage programmiert, welche für jeden neuen Text wiederholt wurde (siehe \autoref{out}).\\
+Die Texte für die Bauchbinden wurden in Blender erstellt. Der Grund ist, dass das gleichzeitige Verschwinden von zwei Texten über unabhängige Masken, hier einfacher realisiert werden konnte. Eine schräge Darstellung der Masken ist in \autoref{out2} abgebildet. Hierfür wurde eine Vorlage programmiert, welche für jeden neuen Text wiederholt wurde (siehe \autoref{out}).\\
 Zwar wird hier wieder in Blender eine Bildsequenz erstellt, welche in das Schnittprogramm geladen wird; trotzdem wird dieser Teil zur Nachbearbeitung des eigentlichen Filmmaterials gezählt.
 
 \begin{figure}[H]
@@ -50,7 +50,7 @@ Damit der Text der Bauchbinden besser lesbar ist, wurden diese mit einem Rechtec
 
 
 
-Das Matchmoving bezeichnet das rekonstruieren von Bewegung aus gefilmtem Videomaterial. Dies wird erreicht, indem markante Punkte verfolgt werden, und anschließend aus der Bewegung dieser, die Bewegung eines Objektes oder der Kamera rekonstruiert wird. \footfullcite{matchmoving}\\
+Das Matchmoving bezeichnet das Rekonstruieren von Bewegung aus gefilmtem Videomaterial. Dies wird erreicht, indem markante Punkte verfolgt werden, und anschließend aus der Bewegung dieser, die Bewegung eines Objektes oder der Kamera rekonstruiert wird. \footfullcite{matchmoving}\\
 In der ersten Szene, in der das Tablet sichtbar ist, wurde der Bildschirminhalt mit einem Screenshot ersetzt, da aufgrund der hellen Umgebung der Inhalt nicht gut sichtbar war. Weiterhin wurden hier mithilfe von Matchmoving ebenfalls die Bewegungen der Kamera reduziert, damit der Bildschirminhalt noch besser sichtbar ist. Ein Screenshot dieser Szene in Bearbeitung ist in \autoref{resolve8} sichtbar.\\
 
 \begin{figure}[H]
@@ -85,7 +85,7 @@ Mit derselben Technik wurde ebenfalls in der Aufnahme, in der die Drohnenaufnahm
 Die gerenderten Bilder wurden weiterhin farblich an das Filmmaterial angepasst. Hierbei war sehr viel Spielraum vorhanden, da -- wie in \autoref{sec:rendering} beschrieben -- die Bildsequenz im unkomprimierten Format openEXR aus Blender exportiert wurde. Dieses Format besitzt eine sehr hohe Farbtiefe, da pro Farbkanal eine 32-Bit-Gleitkommazahl gespeichert wird. \footfullcite{openexr}\\
 Weiterhin wurde beachtet, dass ein kompletter linearer Workflow vorhanden ist. Dies bedeutet, dass Bildmaterial, das miteinander kombiniert wird, im linearen Farbraum bearbeitet wird, und erst nachdem sie fertig kombiniert sind, Farbkorrekturen angewendet werden. Wird dies nicht beachtet, entstehen bspw. Stellen, an denen das Bild ausbrennt. \footfullcite{linearworkflow}\\
 Nachdem die unterschiedlichen Ebenen, wie Drohne und illustrierende Überlagerungen kombiniert wurden, wurde der Farbraum aus Blender wieder angewendet. Hierbei handelt es sich um den Farbraum Filmic. Dieser simuliert das Verhalten eines analogen Filmes, indem bspw. die Helligkeit nicht mehr linear, sondern logarithmisch steigt, oder helle Pixel entsättigt werden. \footfullcite{filmic}\\
-Die Anpassungen der Farben ist zunächst durch den Weißpunkt geschehen. Hierdurch wurde die Helligkeit und die Farbtemperatur angepasst. Dabei wird ein Pixel des Bildes selektiert, der den hellsten Punkt des Bildes darstellt. Die Farben des Bildes werden anschließend automatisch so angepasst, dass dieser Punkt reines Weiß ist.\\
+Die Anpassungen der Farben ist zunächst durch den Weißpunkt geschehen. Hierdurch wurden die Helligkeit und die Farbtemperatur angepasst. Dabei wird ein Pixel des Bildes selektiert, der den hellsten Punkt des Bildes darstellt. Die Farben des Bildes werden anschließend automatisch so angepasst, dass dieser Punkt reines Weiß ist.\\
 Die restlichen Farbanpassungen sind über die Color Wheels geschehen. Mithilfe dieser können die Farben in unterschiedlichen Helligkeitsbereichen angepasst werden. \footfullcite{colorcorrect}
 
 
