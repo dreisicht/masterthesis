@@ -6,8 +6,17 @@
 \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
 \refstepcounter{dummy}
 \pdfbookmark[0]{\listfigurename}{toc}
-% \newcommand*{\textsomels}[1]{\textls[80]{#1}}
-% \addcontentsline{toc}{section}{\textsomels{\textsc{abbildungsverzeichnis}}}%
-\renewcommand\bibname{quellen}
+\newcommand*{\textsomels}[1]{\textls[80]{#1}}
+
+\newcommand{\notocnumsection}[1]{
+  \bgroup%
+  \renewcommand*{\addcontentsline}[3]{\addtocontents{##1}{\protect\contentsline{##2}{##3}{}}}%
+  \section{#1}%
+  \egroup
+}
+
+\addcontentsline{toc}{chapter}{\numberline \textsomels{\textsc{abbildungsverzeichnis}}}%
+% \notocnumsection{\textsomels{\textsc{abbildungsverzeichnis}}
+\renewcommand\bibname{quellverzeichnis}
 \listoffigures
 \cleardoublepage

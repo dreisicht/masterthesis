@@ -8,11 +8,10 @@
 \setcounter{secnumdepth}{3} % <-- 3 numbers up to subsubsections
 \manualmark
 \markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
-\setlength{\topmargin}{5cm}
+% \setlength{\topmargin}{5cm}
 % \titlespacing*{\chapter}{0pt}{3pt}{0pt}
 
-\newgeometry{left=3cm,right=2.5cm,top=10cm,bottom=2.5cm}
+\addtocontents{toc}{\vspace{1\baselineskip}} %spacing above first line of toc
 \tableofcontents
-\restoregeometry  
 
 \cleardoublepage
