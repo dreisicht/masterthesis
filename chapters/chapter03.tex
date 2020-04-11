@@ -9,7 +9,7 @@ Der erste Schnitt wurde vor der Produktion im Zusammenhang mit dem Animatic (sie
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve2.jpg}
-\caption{}
+\caption{Screenshot DaVinci Resolve}
 \label{resolve2}
 \end{center}
 \end{figure}
@@ -41,7 +41,7 @@ Damit der Text der Bauchbinden besser lesbar ist, wurden diese mit einem Rechtec
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve3.jpg}
-\caption{}
+\caption{Einfügen der Bauchbinden}
 \label{resolve3}
 \end{center}
 \end{figure}
@@ -77,63 +77,51 @@ Mit derselben Technik wurde ebenfalls in der Aufnahme, in der die Drohnenaufnahm
 \end{center}
 \end{figure}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=\textwidth]{gfx/post/resolve9.jpg}
-\caption{}
-\label{resolve9}
-\end{center}
-\end{figure}
+% \begin{figure}[H]
+% \begin{center}
+% \includegraphics[width=\textwidth]{gfx/post/resolve9.jpg}
+% \caption{}
+% \label{resolve9}
+% \end{center}
+% \end{figure}
 
 \section{Farbkorrektur}
 
-
-
-bei radiowellen war z.b. wichtig, dass der farbraum filmic erst angewendet wird, nachdem die wellen auf das flugzeug gelegt wurden. ansonsten ausbrennen oder nicht ausnutzen des farbraumes
-
-
-Anpassen über weißpunkt
-Viel Potenzial übrig gewesen, da in openExr gerendert wurde.
-dies war der zweite vorteil von exr dateien gegenüber einem klassischen dateiformat, wie bspw. jpg
-
-davor aber noch anwenden von ocio color space wichtig, da open exr immer linear ohne farbraum ist
---> hinweis auf resolve3.jpg
-
+Die gerenderten Bilder wurden weiterhin farblich an das Filmmaterial angepasst. Hierbei war sehr viel Spielraum vorhanden, da -- wie in \autoref{sec:rendering} beschrieben -- die Bildsequenz im unkomprimierten Format openEXR aus Blender exportiert wurde. Dieses Format besitzt eine sehr hohe Farbtiefe, da pro Farbkanal eine 32-Bit-Gleitkommazahl gespeichert wird. \footfullcite{openexr}\\
+Weiterhin wurde beachtet, dass ein kompletter linearer Workflow vorhanden ist. Dies bedeutet, dass Bildmaterial, das miteinander kombiniert wird, im linearen Farbraum bearbeitet wird, und erst nachdem sie fertig kombiniert sind, Farbkorrekturen angewendet werden. Wird dies nicht beachtet, entstehen bspw. Stellen, an denen das Bild ausbrennt. \footfullcite{linearworkflow}\\
+Nachdem die unterschiedlichen Ebenen, wie Drohne und illustrierende Überlagerungen kombiniert wurde, wurde der Farbraum aus Blender wieder angewendet. Hierbei handelt es sich um den Farbraum ``Filmic''. Dieser simuliert das Verhalten eines analogen Filmes, indem bspw. die Helligkeit nicht mehr linear, sondern logarithmisch steigt, oder helle Pixel entsättigt werden. \footfullcite{filmic}\\
+Die Anpassungen der Farben ist zunächst durch den Weißpunkt geschehen. Hierdurch wurde die Helligkeit ebenfalls angepasst. Dabei wird ein Pixel des Bildes selektiert, der den hellsten Punkt des Bildes darstellt. Die Farben des Bildes werden anschließend automatisch so angepasst, dass dieser Punkt reines Weiß ist.\\
+Die restlichen Farbanpassungen sind über die ``Color Wheels'' geschehen. Mithilfe dieser können die Farben in unterschiedlichen Helligkeitsbereichen angepasst werden. \footfullcite{colorcorrect}
 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{gfx/post/resolve7.jpg}
-\caption{}
+\caption{Workflow bei der Anpassung der Farben}
 \label{resolve7}
 \end{center}
 \end{figure}
 
 \section{Audio}
 
-musik wurde thbd ocean entschieden
-passend geschnitten. eckpunkte waren hierbei der Anfang des Filmes, das Ende des Filmes.
-daher wurde zuerst der titel in der mitte zerschnitten
-der schnitt wurde anschließend so gewählt, dass er an einer passenden stelle ist
-konkret heißt das, dass der schnitt möglichst unaufällig bei 0:56 der schnitt gesetzt wurde
-ziel war damit, dass bei dem stärkeren visuellen wechsel von der seitenansicht des sichtkegels in die draufsicht die musik sich ändert
-motor sample wurde kopiert und denn mehrfach nacheinander abgespielt. außerdem wurde der audio-ausschnitt manchmal gespiegelt, sodass es schwieriger zu erkennen ist, dass es sich wiederholt
-Dass der Motorsound und die Musik dieselbe tonhöhe haben, war ein glücklicher zufall
-WIndgeräusche
-
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=\textwidth]{gfx/post/resolve1.jpg}
-\caption{}
-\label{resolve1}
-\end{center}
-\end{figure}
+Die Entscheidung des Musiktitels fiel auf den Song Ocean von Thbd. Dieser Musiktitel wurde gewählt, da dieser sehr gut die Fluggeschwindigkeit der Drohne widerspiegelt. Zudem war der Rhythmus weder zu aufdringlich, noch fehlte die nötige Dynamik. Die Ernsthaftigkeit des Themas, aber auch die Zuversicht wurde durch diesen Musiktitel gekonnt untermalt.\\
+Der Titel hat in der Originalfassung eine Länge von 3:46 und der Film von 2:04. Daher wurde der Titel in der Länge angepasst, indem bei etwa 0:56 das Lied geteilt wurde, und ein Teil aus der Mitte entfernt wurde. Diese Stelle wurde gewählt, da hier ein starker Wechsel der Bildsprache von der Seitenansicht, zur Draufsicht des Flugpfades stattgefunden hat. Außerdem waren somit das Intro, als auch das Outro des Musiktitels an der passenden Stelle.\\
+Ergänzend zu der Musik wurden Soundeffekte für den Flug hinzugefügt. Hierbei wurde die Audiospur einer Videoaufnahme der Drohne als Motorsound verwendet. Dieser war vergleichsweise kurz, und musste daher mehrmals nacheinander wiedergegeben werden, wie in \autoref{sample} dargestellt ist. Um den Effekt des ständig wiederholenden Audioeffektes zu umgehen, wurden einige Instanzen der Audiospur rückwärts abgespielt. Dass der Motorsound und die Musik dieselbe Tonhöhe haben, war ein glücklicher Zufall.\\
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{gfx/post/sample.jpg}
-\caption{}
+\caption{Wiederholung des Motorsounds der Drohne}
 \label{sample}
+\end{center}
+\end{figure}
+
+Abschließend wurden Windgeräusche unter den Flug der Drohne gelegt, damit das Geschwindigkeitsgefühl weiter untermalt wird. \footfullcite{wind}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{gfx/post/resolve1.jpg}
+\caption{Übersicht der Audiospuren}
+\label{resolve1}
 \end{center}
 \end{figure}

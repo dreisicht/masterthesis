@@ -212,7 +212,7 @@ Der in \autoref{sec:konzept:outline} angesprochene Realismus bezieht sich grunds
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{gfx/prod/plane/an_flight.jpg}
-\caption{Drohne mit Flugpfad und Rotationsabfragen}
+\caption{Drohne mit Flugpfad und drei Rotationsabfragen}
 \label{an_flight}
 \end{center}
 \end{figure}
@@ -230,6 +230,7 @@ Da jedoch kein Videomaterial von der Landung vorhanden war, musste diese virtuel
 
 
 \section{Rendering}
+\label{sec:rendering}
 
 Das nun fertiggestellte und animierte Modell wurde nun gerendert. Hierunter versteht man dass in Abhängigkeit der Lichtquellen -- in diesem Fall des Himmels -- Licht und Schattenwurf des Modells berechnet wird. Um einen möglichst realistischen Look zu erreichen, wurde entschieden mit dem Path-Tracer ``Cycles'' zu arbeiten. Dieser verwendet einen sehr rechenaufwändigen stochastischen Algorithmus. Dies bedeutet, dass mit vielen Proben getestet wird, wie sich Photonen in der Szene verhalten würden. Mit steigender Anzahl der Proben reduziert sich die Streuung, weswegen das Bildrauschen reduziert wird. \footfullcite{cycles}\\
 Für dieses Projekt stand nur ein Standrechner mit einer handelsüblichen Grafikkarte zur Verfügung, weshalb nur 512 Proben pro Pixel berechnet wurden. Das sichtbare Rauschen wurde dann mit einem Filter entfernt. In \autoref{denoising} ist der Unterschied zwischen Rohmaterial (linke Bildhälfte) und gefiltertem Bild (rechte Bildhälfte) zu sehen. Insgesamt belief sich damit die Rechenzeit bei 1550 Bildern und bei 100 Sekunden pro Bild auf etwa 48 Stunden.
